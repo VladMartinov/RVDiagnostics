@@ -1,0 +1,40 @@
+﻿<Window x:Class="RVDiagnostics.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:RVDiagnostics.Controls"
+        Title="Loading..." Height="720" Width="1280"
+        WindowStyle="None" ResizeMode="NoResize"
+        Background="#0f1724" AllowsTransparency="True"
+        Opacity="0">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <!-- Logo -->
+            <Border Width="80" Height="80" CornerRadius="12" Background="#7c1d2f" Margin="0,0,0,20">
+                <TextBlock Text="RV"
+                           FontSize="32" FontWeight="Bold"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+            </Border>
+
+            <!-- Title -->
+            <TextBlock Text="{DynamicResource App.Title}"
+                       Foreground="White"
+                       FontWeight="Bold"
+                       FontSize="28"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,20"/>
+
+            <!-- Spinner -->
+            <controls:Spinner HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <!-- Status Text -->
+            <TextBlock Text="{DynamicResource Status.Loading}"
+                       Foreground="#9aa4b2"
+                       FontSize="14"
+                       HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>

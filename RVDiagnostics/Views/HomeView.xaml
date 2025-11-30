@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="RVDiagnostics.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#0f1724">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Выберите способ диагностики"
+                       Foreground="White" FontSize="24"
+                       HorizontalAlignment="Center"/>
+
+            <Button Content="Manual Selection" Width="220" Height="50"
+                    Margin="0,20,0,0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

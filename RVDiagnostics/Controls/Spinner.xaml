@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="RVDiagnostics.Controls.Spinner"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Width="48" Height="48">
+
+    <Grid>
+
+        <!-- Static subtle background ring -->
+        <Ellipse Width="48"
+                 Height="48"
+                 Stroke="#1b2535"
+                 StrokeThickness="5"
+                 Fill="Transparent"
+                 StrokeStartLineCap="Round"
+                 StrokeEndLineCap="Round"/>
+
+        <!-- Rotating highlight ring segment -->
+        <Ellipse Width="48"
+                 Height="48"
+                 Stroke="#FF3D3D"
+                 StrokeThickness="5"
+                 Fill="Transparent"
+                 StrokeDashArray="14 250"
+                 StrokeStartLineCap="Round"
+                 StrokeEndLineCap="Round">
+
+            <!-- Glow effect -->
+            <Ellipse.Effect>
+                <DropShadowEffect BlurRadius="15"
+                                  Color="#CCFF3D3D"
+                                  ShadowDepth="0"
+                                  Opacity="1"/>
+            </Ellipse.Effect>
+
+            <!-- Rotation center -->
+            <Ellipse.RenderTransform>
+                <RotateTransform x:Name="rt" CenterX="24" CenterY="24"/>
+            </Ellipse.RenderTransform>
+
+            <Ellipse.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+
+                            <!-- Constant smooth rotation (no easing) -->
+                            <DoubleAnimation
+                                Storyboard.TargetName="rt"
+                                Storyboard.TargetProperty="Angle"
+                                From="0" To="360"
+                                Duration="0:0:1.3"
+                                RepeatBehavior="Forever"
+                                AutoReverse="False"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Ellipse.Triggers>
+        </Ellipse>
+
+    </Grid>
+</UserControl>

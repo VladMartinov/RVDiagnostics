@@ -1,0 +1,38 @@
+﻿<Window x:Class="RVDiagnostics.Views.Dialogs.SettingsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Width="350" Height="220"
+        Background="#111827"
+        AllowsTransparency="True"
+        BorderThickness="0"
+        WindowStartupLocation="CenterOwner">
+
+    <Border CornerRadius="12" Background="#1f2937" Padding="20">
+
+        <StackPanel>
+            <TextBlock Text="{DynamicResource UI.Settings}" FontWeight="Bold" Foreground="White" FontSize="18" Margin="0 0 0 20"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 15">
+                <TextBlock Text="{DynamicResource UI.Language}" Foreground="#d1d5db" Width="120"/>
+                <ComboBox Width="150" Name="LanguageSelector">
+                    <ComboBoxItem Content="English" Tag="en"/>
+                    <ComboBoxItem Content="Русский" Tag="ru"/>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource UI.Theme}" Foreground="#d1d5db" Width="120"/>
+                <ComboBox Width="150" Name="ThemeSelector">
+                    <ComboBoxItem Content="Dark" Tag="Dark"/>
+                    <ComboBoxItem Content="Light" Tag="Light"/>
+                </ComboBox>
+            </StackPanel>
+
+            <Button Content="{DynamicResource UI.OK}" Width="80" HorizontalAlignment="Right" Margin="0 20 0 0"
+                    Click="SaveChanges"/>
+        </StackPanel>
+
+    </Border>
+</Window>

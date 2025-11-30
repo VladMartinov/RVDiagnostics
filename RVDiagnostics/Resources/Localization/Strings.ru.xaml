@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <sys:String x:Key="App.Title">RVDiagnostics</sys:String>
+    <sys:String x:Key="App.SubTitle">Диагностический инструмент Ford EEC-IV</sys:String>
+
+    <sys:String x:Key="Status.Loading">Инициализация модулей...</sys:String>
+    <sys:String x:Key="Status.Disconnected">Нет подключения</sys:String>
+
+    <sys:String x:Key="UI.Help">Помощь</sys:String>
+    <sys:String x:Key="UI.Settings">Настройки</sys:String>
+    <sys:String x:Key="UI.Exit">Выход</sys:String>
+    <sys:String x:Key="UI.OK">Готово</sys:String>
+    <sys:String x:Key="UI.Language">Язык</sys:String>
+    <sys:String x:Key="UI.Theme">Тема</sys:String>
+    <sys:String x:Key="UI.BottomHint">Подключите STM32 и нажмите «Начать»</sys:String>
+
+</ResourceDictionary>
