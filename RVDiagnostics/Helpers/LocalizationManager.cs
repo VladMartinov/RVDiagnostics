@@ -4,14 +4,21 @@ namespace RVDiagnostics.Helpers
 {
     public static class LocalizationManager
     {
-        public static void SetLanguage(string lang)
+        public static void SetLanguage(string langCode)
         {
-            var dict = new ResourceDictionary
-            {
-                Source = new Uri($"/Resources/Localization/Strings.{lang}.xaml", UriKind.Relative)
-            };
+            var dict = new ResourceDictionary();
+            string path = $"Resources/Localization/Strings.{langCode}.xaml";
 
-            Application.Current.Resources.MergedDictionaries[1] = dict; // 0 — тема, 1 — язык
+            dict.Source = new Uri(path, UriKind.Relative);
+
+            for (int i = Application.Current.Resources.MergedDictionaries.Count - 1; i >= 0; i--)
+            {
+                var md = Application.Current.Resources.MergedDictionaries[i];
+                if (md.Source != null && md.Source.OriginalString.Contains("Localization"))
+                    Application.Current.Resources.MergedDictionaries.RemoveAt(i);
+            }
+
+            Application.Current.Resources.MergedDictionaries.Add(dict);
         }
     }
 }

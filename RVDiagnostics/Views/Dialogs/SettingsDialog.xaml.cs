@@ -2,6 +2,7 @@
 using RVDiagnostics.Services;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace RVDiagnostics.Views.Dialogs
 {
@@ -10,28 +11,46 @@ namespace RVDiagnostics.Views.Dialogs
         public SettingsDialog()
         {
             InitializeComponent();
+            Loaded += SettingsDialog_Loaded;
+        }
+
+        private void SettingsDialog_Loaded(object sender, RoutedEventArgs e)
+        {
+            var lang = AppSettingsService.Settings.Language;
+
+            foreach (ComboBoxItem item in LanguageSelector.Items)
+            {
+                if (item.Tag.ToString() == lang)
+                {
+                    LanguageSelector.SelectedItem = item;
+                    break;
+                }
+            }
+        }
+
+        private void CloseDialog(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            this.Close();
         }
 
         private void SaveChanges(object sender, RoutedEventArgs e)
         {
-            var lang = ((ComboBoxItem)LanguageSelector.SelectedItem).Tag?.ToString();
-            var theme = ((ComboBoxItem)ThemeSelector.SelectedItem).Tag?.ToString();
+            var lang = (LanguageSelector.SelectedItem as ComboBoxItem)?.Tag.ToString();
 
-            if (!string.IsNullOrEmpty(lang))
-            {
-                LocalizationManager.SetLanguage(lang);
-                SettingsService.Current.Language = lang;
-            }
+            AppSettingsService.Settings.Language = lang;
+            AppSettingsService.Save();
 
-            if (!string.IsNullOrEmpty(theme))
-            {
-                ThemeManager.ApplyTheme(theme);
-                SettingsService.Current.Theme = theme;
-            }
+            LocalizationManager.SetLanguage(lang);
 
-            SettingsService.Save();
+            DialogResult = true;
+            Close();
 
-            this.Close();
+        }
+
+        private void ResetToDefaults(object sender, RoutedEventArgs e)
+        {
+            LanguageSelector.SelectedIndex = 0;
         }
     }
 }

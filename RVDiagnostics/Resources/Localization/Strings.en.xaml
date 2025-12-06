@@ -10,8 +10,10 @@
 
     <sys:String x:Key="UI.Help">Help</sys:String>
     <sys:String x:Key="UI.Settings">Settings</sys:String>
+    <sys:String x:Key="UI.SettingsAlt">Настройки приложения</sys:String>
     <sys:String x:Key="UI.Exit">Exit</sys:String>
     <sys:String x:Key="UI.OK">OK</sys:String>
+    <sys:String x:Key="UI.Reset">Reset</sys:String>
     <sys:String x:Key="UI.Language">Language</sys:String>
     <sys:String x:Key="UI.Theme">Theme</sys:String>
     <sys:String x:Key="UI.BottomHint">Connect STM32 and press "Start"</sys:String>
