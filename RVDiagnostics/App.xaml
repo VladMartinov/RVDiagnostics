@@ -7,9 +7,10 @@
 
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Styles/Buttons.xaml" />
-                <ResourceDictionary Source="Resources/Themes/Dark.xaml"/>
-                <ResourceDictionary Source="Resources/Localization/Strings.ru.xaml"/>
+                <!-- Localization -->
+                <ResourceDictionary Source="/Resources/Localization/Strings.ru.xaml"/>
+                <!-- Global UI Styles -->
+                <ResourceDictionary Source="/Resources/Styles/GlobalStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 

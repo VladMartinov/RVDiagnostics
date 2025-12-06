@@ -3,36 +3,169 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         WindowStyle="None"
         ResizeMode="NoResize"
-        Width="350" Height="220"
-        Background="#111827"
+        Width="420" Height="320"
+        Background="Transparent"
         AllowsTransparency="True"
         BorderThickness="0"
         WindowStartupLocation="CenterOwner">
 
-    <Border CornerRadius="12" Background="#1f2937" Padding="20">
+    <Window.Resources>
 
-        <StackPanel>
-            <TextBlock Text="{DynamicResource UI.Settings}" FontWeight="Bold" Foreground="White" FontSize="18" Margin="0 0 0 20"/>
+        <!-- Background Brushes -->
+        <LinearGradientBrush x:Key="MainGradient" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#0f1a2b" Offset="0"/>
+            <GradientStop Color="#0b1220" Offset="1"/>
+        </LinearGradientBrush>
 
-            <StackPanel Orientation="Horizontal" Margin="0 0 0 15">
-                <TextBlock Text="{DynamicResource UI.Language}" Foreground="#d1d5db" Width="120"/>
-                <ComboBox Width="150" Name="LanguageSelector">
-                    <ComboBoxItem Content="English" Tag="en"/>
-                    <ComboBoxItem Content="Русский" Tag="ru"/>
-                </ComboBox>
-            </StackPanel>
+        <LinearGradientBrush x:Key="GlassOverlay" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#05FFFFFF" Offset="0"/>
+            <GradientStop Color="#03FFFFFF" Offset="1"/>
+        </LinearGradientBrush>
 
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{DynamicResource UI.Theme}" Foreground="#d1d5db" Width="120"/>
-                <ComboBox Width="150" Name="ThemeSelector">
-                    <ComboBoxItem Content="Dark" Tag="Dark"/>
-                    <ComboBoxItem Content="Light" Tag="Light"/>
-                </ComboBox>
-            </StackPanel>
+        <!-- Close Button Style (оставляем локально — он уникальный) -->
+        <Style x:Key="CloseButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Width" Value="28"/>
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="6">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#14FFFFFF"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#28FFFFFF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
 
-            <Button Content="{DynamicResource UI.OK}" Width="80" HorizontalAlignment="Right" Margin="0 20 0 0"
-                    Click="SaveChanges"/>
-        </StackPanel>
+    <!-- Outer glow and shadow -->
+    <Border Background="Transparent" Margin="10">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="0"
+                              Opacity="0.3"
+                              BlurRadius="20"
+                              Color="Black"/>
+        </Border.Effect>
+
+        <!-- Main dialog container -->
+        <Border CornerRadius="12"
+                Background="{StaticResource MainGradient}"
+                BorderThickness="1"
+                BorderBrush="#0AFFFFFF">
+
+            <!-- Inner glass effect -->
+            <Grid>
+                <Border CornerRadius="12" Background="{StaticResource GlassOverlay}"/>
+
+                <!-- Content -->
+                <Grid Margin="24">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Header -->
+                    <StackPanel Grid.Row="0" Margin="0,0,0,20">
+                        <TextBlock Text="{DynamicResource UI.Settings}"
+                                   FontWeight="Bold"
+                                   Foreground="#e6eef6"
+                                   FontSize="18"/>
+
+                        <TextBlock Text="{DynamicResource UI.SettingsAlt}"
+                                   Foreground="#9aa4b2"
+                                   FontSize="12"
+                                   Margin="0,4,0,0"/>
+                    </StackPanel>
+
+                    <!-- Language -->
+                    <Grid Grid.Row="1" Margin="0,0,0,16">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{DynamicResource UI.Language}"
+                                   Foreground="#e6eef6"
+                                   FontSize="14"
+                                   VerticalAlignment="Center"/>
+
+                        <ComboBox Grid.Column="1"
+                                  Name="LanguageSelector"
+                                  HorizontalAlignment="Right"
+                                  Width="200"
+                                  Height="30">
+                            <ComboBoxItem Content="English" Tag="en"/>
+                            <ComboBoxItem Content="Русский" Tag="ru"/>
+                        </ComboBox>
+                    </Grid>
+
+                    <!-- Push content down -->
+                    <Grid Grid.Row="2"/>
+
+                    <!-- Buttons -->
+                    <Border
+                        Grid.Row="4"
+                        Background="Transparent"
+                        Padding="0,20,0,0"
+                        BorderBrush="{StaticResource BorderLowOpacity}"
+                        BorderThickness="0,1,0,0"
+                    >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <!-- Reset button -->
+                            <Button
+                                Grid.Column="1"
+                                Style="{StaticResource PrimaryButton}"
+                                Content="{DynamicResource UI.Reset}"
+                                Margin="0,0,12,0"
+                                Click="ResetToDefaults"
+                            /> 
+                            <!-- OK button -->
+                            <Button
+                                Grid.Column="2"
+                                Content="{DynamicResource UI.OK}"
+                                Click="SaveChanges"
+                                />
+                        </Grid>
+                    </Border>
+                </Grid>
+
+                <!-- Close button -->
+                <Button x:Name="CloseButton"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Margin="8"
+                        Style="{StaticResource CloseButtonStyle}"
+                        Click="CloseDialog">
+                    <Viewbox Width="10" Height="10">
+                        <Path Data="M0,0 L10,10 M10,0 L0,10"
+                              Stroke="#9aa4b2"
+                              StrokeThickness="1.5"/>
+                    </Viewbox>
+                </Button>
+            </Grid>
+        </Border>
 
     </Border>
 </Window>

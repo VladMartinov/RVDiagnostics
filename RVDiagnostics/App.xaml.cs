@@ -1,7 +1,5 @@
 ﻿using RVDiagnostics.Helpers;
 using RVDiagnostics.Services;
-using System.Configuration;
-using System.Data;
 using System.Windows;
 
 namespace RVDiagnostics
@@ -13,12 +11,15 @@ namespace RVDiagnostics
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            SettingsService.Load();
-
-            LocalizationManager.SetLanguage(SettingsService.Current.Language);
-            ThemeManager.ApplyTheme(SettingsService.Current.Theme);
-
             base.OnStartup(e);
+
+            // START. Service
+            AppSettingsService.Initialize();
+            // END. Service
+
+            // START. Helpers
+            LocalizationManager.SetLanguage(AppSettingsService.Settings.Language);
+            // END. Helpers
         }
     }
 }

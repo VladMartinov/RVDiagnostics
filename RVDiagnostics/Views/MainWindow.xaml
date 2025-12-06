@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="RVDiagnostics" Height="720" Width="1280"
+        Title="{DynamicResource App.Title}" Height="720" Width="1280"
         WindowStyle="None" ResizeMode="NoResize" Background="#0f1724">
 
     <Grid>
@@ -52,9 +52,9 @@
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center">
                     
-                        <Button Content="{DynamicResource UI.Help}" Width="80" Style="{StaticResource FooterBtn}" Margin="0,0,8,0"/>
-                        <Button Content="{DynamicResource UI.Settings}" Width="90" Style="{StaticResource FooterBtn}" Margin="0,0,8,0" Click="OpenSettings"/>
-                        <Button Content="{DynamicResource UI.Exit}" Width="80" Style="{StaticResource FooterBtn}" Click="CloseApp"/>
+                        <Button Content="{DynamicResource UI.Help}" Width="80" Margin="0,0,8,0"/>
+                        <Button Content="{DynamicResource UI.Settings}" Width="90" Margin="0,0,8,0" Click="OpenSettings"/>
+                        <Button Content="{DynamicResource UI.Exit}" Width="80" Click="CloseApp"/>
                     
                 </StackPanel>
             </Grid>
