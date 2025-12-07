@@ -6,7 +6,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>convertio.in_Logo.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="convertio.in_Logo.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Page Update="Controls\Spinner.xaml">

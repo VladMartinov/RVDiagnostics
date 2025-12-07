@@ -38,6 +38,8 @@ namespace RVDiagnostics.Views.Dialogs
         {
             var lang = (LanguageSelector.SelectedItem as ComboBoxItem)?.Tag.ToString();
 
+            if (lang == null) lang = "en";
+
             AppSettingsService.Settings.Language = lang;
             AppSettingsService.Save();
 
