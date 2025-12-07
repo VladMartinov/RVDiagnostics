@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:RVDiagnostics.Controls"
         mc:Ignorable="d"
         Title="{DynamicResource App.Title}" Height="720" Width="1280"
         WindowStyle="None" ResizeMode="NoResize" Background="#0f1724">
@@ -14,9 +15,11 @@
 
                 <!-- Left Area: Logo + Title -->
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <Border Width="36" Height="36" CornerRadius="6" Background="#7c1d2f" Margin="0,0,10,0">
-                        <TextBlock Text="RV" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Foreground="White"/>
-                    </Border>
+                    <controls:Logo Text="RV"
+                                   Size="37"
+                                   CornerRadius="6"
+                                   Margin="0,0,10,0"
+                                   FontSize="16"/>
 
                     <StackPanel>
                         <TextBlock Text="{DynamicResource App.Title}" Foreground="White" FontSize="16" FontWeight="Bold"/>
