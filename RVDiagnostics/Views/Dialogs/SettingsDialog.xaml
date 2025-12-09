@@ -132,21 +132,22 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
-                            
-                            <!-- Reset button -->
-                            <Button
-                                Grid.Column="1"
-                                Style="{StaticResource PrimaryButton}"
-                                Content="{DynamicResource UI.Reset}"
-                                Margin="0,0,12,0"
-                                Click="ResetToDefaults"
-                            /> 
+
                             <!-- OK button -->
                             <Button
-                                Grid.Column="2"
+                                Grid.Column="1"
                                 Content="{DynamicResource UI.OK}"
+                                Margin="0,0,12,0"
                                 Click="SaveChanges"
                                 />
+
+                            <!-- Reset button -->
+                            <Button
+                                Grid.Column="2"
+                                Style="{StaticResource PrimaryButton}"
+                                Content="{DynamicResource UI.Reset}"
+                                Click="ResetToDefaults"
+                            /> 
                         </Grid>
                     </Border>
                 </Grid>

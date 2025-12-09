@@ -14,6 +14,7 @@ namespace RVDiagnostics
         public MainWindow()
         {
             InitializeComponent();
+            MainContent.Content = new ModelSelectionView();
         }
 
         public void Navigate(UIElement nextView)

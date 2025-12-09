@@ -1,8 +1,6 @@
-﻿using RVDiagnostics.Helpers;
-using RVDiagnostics.Services;
+﻿using RVDiagnostics.Services;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace RVDiagnostics.Views.Dialogs
 {
