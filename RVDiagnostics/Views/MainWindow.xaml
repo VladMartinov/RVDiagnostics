@@ -57,8 +57,8 @@
                     
                         <Button Content="{DynamicResource UI.Help}" Width="80" Margin="0,0,8,0"/>
                         <Button Content="{DynamicResource UI.Settings}" Width="90" Margin="0,0,8,0" Click="OpenSettings"/>
-                        <Button Content="{DynamicResource UI.Exit}" Width="80" Click="CloseApp"/>
-                    
+                        <Button Content="{DynamicResource UI.Exit}" Width="80" Style="{StaticResource PrimaryButton}" Click="CloseApp"/>
+
                 </StackPanel>
             </Grid>
         </Border>

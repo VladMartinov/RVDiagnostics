@@ -2,12 +2,16 @@
                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <!-- App Strings -->
     <sys:String x:Key="App.Title">RVDiagnostics</sys:String>
     <sys:String x:Key="App.SubTitle">Диагностический инструмент Ford EEC-IV</sys:String>
 
+    <!-- Status Strings -->
     <sys:String x:Key="Status.Loading">Инициализация модулей...</sys:String>
     <sys:String x:Key="Status.Disconnected">Нет подключения</sys:String>
+    <sys:String x:Key="Status.Connected">Подключено</sys:String>
 
+    <!-- UI Strings -->
     <sys:String x:Key="UI.Help">Помощь</sys:String>
     <sys:String x:Key="UI.Settings">Настройки</sys:String>
     <sys:String x:Key="UI.SettingsAlt">Application preferences</sys:String>
@@ -16,6 +20,71 @@
     <sys:String x:Key="UI.Reset">Сбросить</sys:String>
     <sys:String x:Key="UI.Language">Язык</sys:String>
     <sys:String x:Key="UI.Theme">Тема</sys:String>
-    <sys:String x:Key="UI.BottomHint">Подключите STM32 и нажмите «Начать»</sys:String>
+    <sys:String x:Key="UI.BottomHint">Подключите диагностический адаптер и нажмите «Начать диагностику»</sys:String>
+    <sys:String x:Key="UI.Clear">Очистить</sys:String>
+    <sys:String x:Key="UI.StartDiagnostic">Начать диагностику</sys:String>
+
+    <!-- Model Selection Strings -->
+    <sys:String x:Key="Model.SelectionMode">Режим выбора</sys:String>
+    <sys:String x:Key="Model.ByVehicle">По марке и двигателю</sys:String>
+    <sys:String x:Key="Model.ByVehicle.Description">Классический выбор автомобиля</sys:String>
+    <sys:String x:Key="Model.ByECU">По коду ЭБУ</sys:String>
+    <sys:String x:Key="Model.ByECU.Description">Ввод кода вручную</sys:String>
+
+    <sys:String x:Key="Model.Make">Марка</sys:String>
+    <sys:String x:Key="Model.Model">Модель</sys:String>
+    <sys:String x:Key="Model.Generation">Поколение</sys:String>
+    <sys:String x:Key="Model.Engine">Двигатель / ECU</sys:String>
+
+    <sys:String x:Key="Model.ECU.Code">Введите код ЭБУ</sys:String>
+    <sys:String x:Key="Model.ECU.Placeholder">Например: 88GB-12A650-AB, N9D, L1B...</sys:String>
+    <sys:String x:Key="Model.ECU.Find">Найти конфигурацию</sys:String>
+
+    <!-- Information Panel Strings -->
+    <sys:String x:Key="Info.Title">Информация</sys:String>
+    <sys:String x:Key="Info.BasicData">Основные данные</sys:String>
+    <sys:String x:Key="Info.Diagnostic">Диагностика</sys:String>
+    <sys:String x:Key="Info.Description">Описание</sys:String>
+    <sys:String x:Key="Info.DefaultDescription">Выберите модель автомобиля или введите код ЭБУ для отображения информации</sys:String>
+
+    <sys:String x:Key="Info.Make">Марка:</sys:String>
+    <sys:String x:Key="Info.Model">Модель:</sys:String>
+    <sys:String x:Key="Info.Years">Годы:</sys:String>
+    <sys:String x:Key="Info.Engine">Двигатель:</sys:String>
+    <sys:String x:Key="Info.ECU">ECU:</sys:String>
+    <sys:String x:Key="Info.Protocol">Протокол:</sys:String>
+    <sys:String x:Key="Info.Connector">Разъём:</sys:String>
+    <sys:String x:Key="Info.Tests">Типы тестов:</sys:String>
+
+    <!-- Brand Names -->
+    <sys:String x:Key="Brand.Ford">Ford</sys:String>
+
+    <!-- Model Names -->
+    <sys:String x:Key="Model.Scorpio">Scorpio</sys:String>
+
+    <!-- Generation Names -->
+    <sys:String x:Key="Generation.Scorpio.First">Первое поколение (1985-1992)</sys:String>
+
+    <!-- Engine Names -->
+    <sys:String x:Key="Engine.Scorpio.N9D">2.0i DOHC (N9D) - 88GB-12A650-AB</sys:String>
+
+    <!-- Default Values -->
+    <sys:String x:Key="Default.NotSelected">--</sys:String>
+    <sys:String x:Key="Default.SelectMake">-- Выберите марку --</sys:String>
+    <sys:String x:Key="Default.SelectModel">-- Выберите модель --</sys:String>
+    <sys:String x:Key="Default.SelectGeneration">-- Выберите поколение --</sys:String>
+    <sys:String x:Key="Default.SelectEngine">-- Выберите двигатель --</sys:String>
+
+    <!-- Messages -->
+    <sys:String x:Key="Message.SelectEngine">Выберите двигатель для продолжения</sys:String>
+    <sys:String x:Key="Message.FindECU">Найдите конфигурацию по коду ЭБУ</sys:String>
+    <sys:String x:Key="Message.EnterECU">Введите код ЭБУ для поиска</sys:String>
+    <sys:String x:Key="Message.ECUNotFound">Конфигурация для кода '{0}' не найдена</sys:String>
+    <sys:String x:Key="Message.Connecting">Подключение к диагностическому интерфейсу...</sys:String>
+    <sys:String x:Key="Message.StartingDiagnostic">Запуск диагностики для {0} {1}...</sys:String>
+
+    <!-- Tooltips -->
+    <sys:String x:Key="Tooltip.Clear">Очистить все поля</sys:String>
+    <sys:String x:Key="Tooltip.StartDiagnostic">Начать диагностику выбранной модели</sys:String>
 
 </ResourceDictionary>

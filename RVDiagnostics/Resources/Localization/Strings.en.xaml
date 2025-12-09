@@ -2,12 +2,16 @@
                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <!-- App Strings -->
     <sys:String x:Key="App.Title">RVDiagnostics</sys:String>
     <sys:String x:Key="App.SubTitle">Ford EEC-IV Diagnostic Tool</sys:String>
-    
+
+    <!-- Status Strings -->
     <sys:String x:Key="Status.Loading">Initializing modules...</sys:String>
     <sys:String x:Key="Status.Disconnected">Not connected</sys:String>
+    <sys:String x:Key="Status.Connected">Connected</sys:String>
 
+    <!-- UI Strings -->
     <sys:String x:Key="UI.Help">Help</sys:String>
     <sys:String x:Key="UI.Settings">Settings</sys:String>
     <sys:String x:Key="UI.SettingsAlt">Настройки приложения</sys:String>
@@ -16,6 +20,71 @@
     <sys:String x:Key="UI.Reset">Reset</sys:String>
     <sys:String x:Key="UI.Language">Language</sys:String>
     <sys:String x:Key="UI.Theme">Theme</sys:String>
-    <sys:String x:Key="UI.BottomHint">Connect STM32 and press "Start"</sys:String>
+    <sys:String x:Key="UI.BottomHint">Connect the diagnostic adapter and click "Start diagnostic"</sys:String>
+    <sys:String x:Key="UI.Clear">Clear</sys:String>
+    <sys:String x:Key="UI.StartDiagnostic">Start diagnostic</sys:String>
+
+    <!-- Model Selection Strings -->
+    <sys:String x:Key="Model.SelectionMode">Selection mode</sys:String>
+    <sys:String x:Key="Model.ByVehicle">By brand and engine</sys:String>
+    <sys:String x:Key="Model.ByVehicle.Description">Classic car choice</sys:String>
+    <sys:String x:Key="Model.ByECU">By ECU code</sys:String>
+    <sys:String x:Key="Model.ByECU.Description">Entering the code manually</sys:String>
+
+    <sys:String x:Key="Model.Make">Brand</sys:String>
+    <sys:String x:Key="Model.Model">Model</sys:String>
+    <sys:String x:Key="Model.Generation">Generation</sys:String>
+    <sys:String x:Key="Model.Engine">Engine / ECU</sys:String>
+
+    <sys:String x:Key="Model.ECU.Code">Enter the ECU code</sys:String>
+    <sys:String x:Key="Model.ECU.Placeholder">For example: 88GB-12A650-AB, N9D, L1B...</sys:String>
+    <sys:String x:Key="Model.ECU.Find">Find configuration</sys:String>
+
+    <!-- Information Panel Strings -->
+    <sys:String x:Key="Info.Title">Information</sys:String>
+    <sys:String x:Key="Info.BasicData">Basic data</sys:String>
+    <sys:String x:Key="Info.Diagnostic">Diagnostics</sys:String>
+    <sys:String x:Key="Info.Description">Description</sys:String>
+    <sys:String x:Key="Info.DefaultDescription">Select your vehicle model or enter your ECU code to display information.</sys:String>
+
+    <sys:String x:Key="Info.Make">Brand:</sys:String>
+    <sys:String x:Key="Info.Model">Model:</sys:String>
+    <sys:String x:Key="Info.Years">Years:</sys:String>
+    <sys:String x:Key="Info.Engine">Engine:</sys:String>
+    <sys:String x:Key="Info.ECU">ECU:</sys:String>
+    <sys:String x:Key="Info.Protocol">Protocol:</sys:String>
+    <sys:String x:Key="Info.Connector">Connector:</sys:String>
+    <sys:String x:Key="Info.Tests">Types of tests:</sys:String>
+
+    <!-- Brand Names -->
+    <sys:String x:Key="Brand.Ford">Ford</sys:String>
+
+    <!-- Model Names -->
+    <sys:String x:Key="Model.Scorpio">Scorpio</sys:String>
+
+    <!-- Generation Names -->
+    <sys:String x:Key="Generation.Scorpio.First">First generation (1985-1992)</sys:String>
+
+    <!-- Engine Names -->
+    <sys:String x:Key="Engine.Scorpio.N9D">2.0i DOHC (N9D) - 88GB-12A650-AB</sys:String>
+
+    <!-- Default Values -->
+    <sys:String x:Key="Default.NotSelected">--</sys:String>
+    <sys:String x:Key="Default.SelectMake">-- Select brand --</sys:String>
+    <sys:String x:Key="Default.SelectModel">-- Select model --</sys:String>
+    <sys:String x:Key="Default.SelectGeneration">-- Select generation --</sys:String>
+    <sys:String x:Key="Default.SelectEngine">-- Select engineь --</sys:String>
+
+    <!-- Messages -->
+    <sys:String x:Key="Message.SelectEngine">Select an engine to continue</sys:String>
+    <sys:String x:Key="Message.FindECU">Find the configuration by ECU code</sys:String>
+    <sys:String x:Key="Message.EnterECU">Enter the ECU code to search</sys:String>
+    <sys:String x:Key="Message.ECUNotFound">Configuration for code '{0}' not found</sys:String>
+    <sys:String x:Key="Message.Connecting">Connecting to the diagnostic interface...</sys:String>
+    <sys:String x:Key="Message.StartingDiagnostic">Running diagnostics for {0} {1}...</sys:String>
+
+    <!-- Tooltips -->
+    <sys:String x:Key="Tooltip.Clear">Clear all fields</sys:String>
+    <sys:String x:Key="Tooltip.StartDiagnostic">Start diagnostics of the selected model</sys:String>
 
 </ResourceDictionary>
