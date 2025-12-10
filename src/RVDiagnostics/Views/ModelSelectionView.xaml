@@ -4,9 +4,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="clr-namespace:RVDiagnostics.Converters"
+             xmlns:vm="clr-namespace:RVDiagnostics.ViewModels"
              mc:Ignorable="d"
              Background="{StaticResource BgDark1}">
-
+    <UserControl.DataContext>
+        <vm:ModelSelectionViewModel/>
+    </UserControl.DataContext>
     <UserControl.Resources>
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
 
@@ -96,7 +99,7 @@
 
                     <!-- Плитка "По марке и двигателю" -->
                     <Border x:Name="VehicleTile" 
-                            Grid.Column="0" 
+                            Grid.Column="0"
                             Margin="0,0,6,12"
                             Style="{StaticResource TileStyle}"
                             Tag="active">
