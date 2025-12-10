@@ -14,27 +14,23 @@ public partial class DContext : DbContext
     {
     }
 
-    public virtual DbSet<Brand> Brands { get; set; }
+    public virtual DbSet<Brand> Brands { get; set; } = null!;
 
-    public virtual DbSet<Car> Cars { get; set; }
+    public virtual DbSet<Car> Cars { get; set; } = null!;
 
-    public virtual DbSet<CarDescription> CarDescriptions { get; set; }
+    public virtual DbSet<CarDescription> CarDescriptions { get; set; } = null!;
 
-    public virtual DbSet<CarImage> CarImages { get; set; }
+    public virtual DbSet<CarImage> CarImages { get; set; } = null!;
 
-    public virtual DbSet<Diagnostic> Diagnostics { get; set; }
+    public virtual DbSet<Diagnostic> Diagnostics { get; set; } = null!;
 
-    public virtual DbSet<DiagnosticTest> DiagnosticTests { get; set; }
+    public virtual DbSet<DiagnosticTest> DiagnosticTests { get; set; } = null!;
 
-    public virtual DbSet<Engine> Engines { get; set; }
+    public virtual DbSet<Engine> Engines { get; set; } = null!;
 
-    public virtual DbSet<Port> Ports { get; set; }
+    public virtual DbSet<Port> Ports { get; set; } = null!;
 
-    public virtual DbSet<Test> Tests { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlite("Data Source=C:\\Users\\owl\\DataGripProjects\\EcommerceSpareParts\\rvDiagnostics.sqlite");
+    public virtual DbSet<Test> Tests { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
