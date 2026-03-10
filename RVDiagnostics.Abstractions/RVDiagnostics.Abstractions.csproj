@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RVDiagnostics.Entities\RVDiagnostics.Entities.csproj" />
+    <ProjectReference Include="..\RVDiagnostics.Enums\RVDiagnostics.Enums.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="RVDiagnostics.Abstractions/RVDiagnostics.Abstractions.csproj" />
+  <Project Path="RVDiagnostics.App.Styles/RVDiagnostics.App.Styles.csproj" />
+  <Project Path="RVDiagnostics.App/RVDiagnostics.App.csproj" />
+  <Project Path="RVDiagnostics.Entities/RVDiagnostics.Entities.csproj" />
+  <Project Path="RVDiagnostics.Enums/RVDiagnostics.Enums.csproj" />
+  <Project Path="RVDiagnostics.Persistence/RVDiagnostics.Persistence.csproj" />
+</Solution>
